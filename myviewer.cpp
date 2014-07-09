@@ -579,6 +579,9 @@ int RegistKey()
 
 int IsRegist()
 {
+	s_registflag = 1;
+
+/*
 	s_registflag = 0;
 
 	LONG lret;
@@ -598,7 +601,7 @@ int IsRegist()
 		}
 		RegCloseKey( s_hkey );
 	}
-
+*/
 	return 0;
 
 }
@@ -25593,12 +25596,12 @@ LRESULT CMyD3DApplication::OnCommand(UINT uMsg, WPARAM wParam, LPARAM lParam, BO
 		ret = ConvNormalMap();
 		_ASSERT( !ret );
 		break;
-	case IDTBB_R:
 	case IDM_BAKEMOTION:
 		if( g_motdlg ){
 			g_motdlg->BakeMotion();
 		}
 		break;
+	case IDTBB_R:
 	case IDM_ALT_R:
 		if( m_graphwnd ){
 			m_graphwnd->CloseSpDlg();
